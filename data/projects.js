@@ -133,8 +133,8 @@ const getProjects = () => {
     {
         id: 'talentcard',
         title: 'TalentCard',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/talentcard/01.png',
+        images: gallery('talentcard', ['png','png','png','png']),
         link: '/projects/talentcard',
         tech: 'Laravel',
         techMore: 'Laravel 12 | PHP',
@@ -163,8 +163,8 @@ const getProjects = () => {
     {
         id: 'meeting-notes-bot',
         title: 'Meeting Notes Bot',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/meeting-notes-bot/01.png',
+        images: gallery('meeting-notes-bot', ['png','png']),
         link: '/projects/meeting-notes-bot',
         tech: 'AI',
         techMore: 'Vexa | Cloudflare Worker',
@@ -178,8 +178,8 @@ const getProjects = () => {
     {
         id: 'mattermost-mcp',
         title: 'Mattermost MCP Chat',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/mattermost-mcp/01.png',
+        images: gallery('mattermost-mcp', ['png']),
         link: '/projects/mattermost-mcp',
         tech: 'AI / MCP',
         techMore: 'MCP | Mattermost',
@@ -223,8 +223,8 @@ const getProjects = () => {
     {
         id: 'pastpapers',
         title: 'Past Papers Downloader',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/pastpapers/01.png',
+        images: gallery('pastpapers', ['png']),
         link: '/projects/pastpapers',
         tech: 'Python',
         techMore: 'Python',
