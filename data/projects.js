@@ -13,8 +13,8 @@ const getProjects = () => {
     {
         id: 'loc8',
         title: 'Loc8 Marketplace',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/loc8/01.png',
+        images: gallery('loc8', ['png','png','png']),
         link: '/projects/loc8',
         tech: 'Next.js',
         techMore: 'Next.js | Cloudflare',
@@ -28,8 +28,8 @@ const getProjects = () => {
     {
         id: 'pos-system',
         title: 'Retail POS System',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/pos-system/01.png',
+        images: gallery('pos-system', ['png','png','png','png','png']),
         link: '/projects/pos-system',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Workers | Pages',
@@ -88,8 +88,8 @@ const getProjects = () => {
     {
         id: 'swapsphere',
         title: 'SwapSphere',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/swapsphere/01.png',
+        images: gallery('swapsphere', ['png','png']),
         link: '/projects/swapsphere',
         tech: 'React Native',
         techMore: 'Expo | Node.js',
