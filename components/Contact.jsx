@@ -31,12 +31,29 @@ const Contact = () => {
                   I am available for freelance or full-time positions. Contact
                   me and let&apos;s talk.
                 </p>
+                <div className='text-slate-600'>
+                  <p className='py-1'>
+                    <span className='font-semibold'>Phone: </span>
+                    <a href='tel:+263773716074' className='hover:underline'>0773 716 074</a>
+                  </p>
+                  <p className='py-1'>
+                    <span className='font-semibold'>Email: </span>
+                    <a href='mailto:ngonidzashemaphosa@outlook.com' className='hover:underline'>
+                      ngonidzashemaphosa@outlook.com
+                    </a>
+                  </p>
+                  <p className='py-1'>
+                    <a href='mailto:ngara.maphosa@gmail.com' className='hover:underline'>
+                      ngara.maphosa@gmail.com
+                    </a>
+                  </p>
+                </div>
               </div>
               <div>
                 <p className='uppercase text-slate-600 pt-8'>Connect With Me</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
-                    href='https://www.linkedin.com/in/ngoni-maphosa/'
+                    href='https://www.linkedin.com/in/ngonidzashe-maphosa-737078138/'
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -54,9 +71,11 @@ const Contact = () => {
                     </div>
                   </a>
 
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                    <AiOutlineMail />
-                  </div>
+                  <a href='mailto:ngonidzashemaphosa@outlook.com'>
+                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
+                      <AiOutlineMail />
+                    </div>
+                  </a>
                   <Link href='/resume'>
                     <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
                       <BsFillPersonLinesFill />

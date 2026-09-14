@@ -1,15 +1,20 @@
 import React from 'react'
 
-// NOTE (rebrand): every project below uses '/assets/projects/placeholder.jpg' as a
-// stand-in screenshot. Drop a real screenshot into public/assets/projects/ and point
-// each project's `image` field at it. Links marked '#' are TODOs where I didn't have a
-// confirmed public URL — fill in the live demo / repo links (many repos are private).
+// Project screenshots live in public/assets/projects/<id>/ and were pulled from each
+// project's own repo (docs/screenshots, public, assets). Projects without real screenshots
+// yet fall back to placeholder.jpg — run/deploy them and drop images into their folder.
+const PLACEHOLDER = '/assets/projects/placeholder.jpg'
+
+// Build a gallery of image paths for a project id, e.g. gallery('job-assistant', ['png','png']).
+const gallery = (id, exts) => exts.map((ext, i) => `/assets/projects/${id}/${String(i + 1).padStart(2, '0')}.${ext}`)
+
 const getProjects = () => {
   return [
     {
         id: 'loc8',
         title: 'Loc8 Marketplace',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/loc8',
         tech: 'Next.js',
         techMore: 'Next.js | Cloudflare',
@@ -23,7 +28,8 @@ const getProjects = () => {
     {
         id: 'pos-system',
         title: 'Retail POS System',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/pos-system',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Workers | Pages',
@@ -37,13 +43,14 @@ const getProjects = () => {
     {
         id: 'school-portal',
         title: 'School Management Portal',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/school-portal/01.png',
+        images: gallery('school-portal', ['png','png','png','png','png','png','png']),
         link: '/projects/school-portal',
         tech: 'Next.js',
         techMore: 'Next.js | Prisma',
         liveDemo: '#', // TODO: add live URL
         gitHubLink: '#', // TODO: add repo URL
-        desc: 'A multi-tenant school management portal with role-based access control for administrators, teachers, students and guardians. Built with Next.js 16, Prisma 7 and Auth.js v5 on a Neon Postgres database.',
+        desc: 'A multi-tenant school management portal with role-based access control for administrators, teachers, students and guardians. Built with Next.js 16, Prisma 7 and Auth.js v5 on a Neon Postgres database. Covers dashboards, students, attendance, fees, library and leaderboards.',
         techStack: [
             'Next.js 16', 'Prisma 7', 'Auth.js v5', 'Neon Postgres', 'Tailwind CSS'
         ]
@@ -51,7 +58,8 @@ const getProjects = () => {
     {
         id: 'warthog-portal',
         title: 'Warthog Academy Portal',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/warthog-portal/01.png',
+        images: gallery('warthog-portal', ['png','png','png','png','png']),
         link: '/projects/warthog-portal',
         tech: 'Next.js',
         techMore: 'Next.js | MariaDB',
@@ -65,7 +73,8 @@ const getProjects = () => {
     {
         id: 'warthog-site',
         title: 'Warthog Academy Website',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/warthog-site/01.jpg',
+        images: gallery('warthog-site', ['jpg','jpg','jpg','png','jpg','jpg']),
         link: '/projects/warthog-site',
         tech: 'Web',
         techMore: 'HTML | CSS | JS',
@@ -79,7 +88,8 @@ const getProjects = () => {
     {
         id: 'swapsphere',
         title: 'SwapSphere',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/swapsphere',
         tech: 'React Native',
         techMore: 'Expo | Node.js',
@@ -91,15 +101,16 @@ const getProjects = () => {
         ]
     },
     {
-        id: 'tapseed',
-        title: 'Tapseed Job Assistant',
-        image: '/assets/projects/placeholder.jpg',
-        link: '/projects/tapseed',
+        id: 'job-assistant',
+        title: 'Job Assistant',
+        image: '/assets/projects/job-assistant/01.png',
+        images: gallery('job-assistant', ['png','png','png','png','png']),
+        link: '/projects/job-assistant',
         tech: 'AI / Next.js',
         techMore: 'Next.js | Cloudflare Worker',
         liveDemo: '#', // TODO: add live URL
         gitHubLink: 'https://github.com/Ngoni-Sama/job-assistant',
-        desc: 'An AI-powered job-matching platform that pairs candidates with roles. Structured as a monorepo combining a Cloudflare Worker API with a Next.js 16 front end.',
+        desc: 'An AI-powered job-matching platform that pairs candidates with roles through a swipe-to-match flow, nearby jobs and a built-in CV builder. Structured as a monorepo combining a Cloudflare Worker API with a Next.js 16 front end.',
         techStack: [
             'Next.js 16', 'Cloudflare Workers', 'AI', 'TypeScript'
         ]
@@ -107,7 +118,8 @@ const getProjects = () => {
     {
         id: 'samaritanlink',
         title: 'SamaritanLink (MA360)',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/samaritanlink/01.png',
+        images: gallery('samaritanlink', ['png','png','png']),
         link: '/projects/samaritanlink',
         tech: 'Next.js',
         techMore: 'Next.js | Vercel',
@@ -121,7 +133,8 @@ const getProjects = () => {
     {
         id: 'talentcard',
         title: 'TalentCard',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/talentcard',
         tech: 'Laravel',
         techMore: 'Laravel 12 | PHP',
@@ -135,7 +148,8 @@ const getProjects = () => {
     {
         id: 'caselaw-rag',
         title: 'Labour Caselaw RAG',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/caselaw-rag/01.png',
+        images: gallery('caselaw-rag', ['png','png','png']),
         link: '/projects/caselaw-rag',
         tech: 'AI / RAG',
         techMore: 'Cloudflare AutoRAG',
@@ -149,7 +163,8 @@ const getProjects = () => {
     {
         id: 'meeting-notes-bot',
         title: 'Meeting Notes Bot',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/meeting-notes-bot',
         tech: 'AI',
         techMore: 'Vexa | Cloudflare Worker',
@@ -163,7 +178,8 @@ const getProjects = () => {
     {
         id: 'mattermost-mcp',
         title: 'Mattermost MCP Chat',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/mattermost-mcp',
         tech: 'AI / MCP',
         techMore: 'MCP | Mattermost',
@@ -177,7 +193,8 @@ const getProjects = () => {
     {
         id: 'blog-publisher',
         title: 'Multi-Blog Publisher',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/blog-publisher',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Worker | Ghost',
@@ -191,7 +208,8 @@ const getProjects = () => {
     {
         id: 'canchem-jobs',
         title: 'CanChem Jobs Portal',
-        image: '/assets/projects/placeholder.jpg',
+        image: '/assets/projects/canchem-jobs/01.png',
+        images: gallery('canchem-jobs', ['png','png']),
         link: '/projects/canchem-jobs',
         tech: 'Node.js',
         techMore: 'Node.js',
@@ -205,7 +223,8 @@ const getProjects = () => {
     {
         id: 'pastpapers',
         title: 'Past Papers Downloader',
-        image: '/assets/projects/placeholder.jpg',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
         link: '/projects/pastpapers',
         tech: 'Python',
         techMore: 'Python',

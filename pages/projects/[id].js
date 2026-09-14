@@ -1,11 +1,42 @@
 import getProjects from '@/data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { RiRadioButtonFill } from 'react-icons/ri'
+import { AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
-const Projects = ({project}) => {
-  const { title, image, techMore, liveDemo, gitHubLink, desc, techStack } = project[0]
+const Projects = ({ project }) => {
+  const { title, image, images, techMore, liveDemo, gitHubLink, desc, techStack } = project[0]
+
+  // Gallery images: use the project's images array, falling back to the single hero image.
+  const gallery = (images && images.length ? images : [image]).filter(Boolean)
+  const hasGallery = gallery.length > 1
+
+  // Lightbox state: null when closed, otherwise the index of the open image.
+  const [lightbox, setLightbox] = useState(null)
+  const isOpen = lightbox !== null
+
+  const close = useCallback(() => setLightbox(null), [])
+  const next = useCallback(
+    (e) => { e && e.stopPropagation(); setLightbox((i) => (i + 1) % gallery.length) },
+    [gallery.length]
+  )
+  const prev = useCallback(
+    (e) => { e && e.stopPropagation(); setLightbox((i) => (i - 1 + gallery.length) % gallery.length) },
+    [gallery.length]
+  )
+
+  // Keyboard controls for the lightbox.
+  useEffect(() => {
+    if (!isOpen) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') close()
+      else if (e.key === 'ArrowRight') next()
+      else if (e.key === 'ArrowLeft') prev()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [isOpen, close, next, prev])
 
   return (
     <div className='w-full'>
@@ -16,7 +47,7 @@ const Projects = ({project}) => {
           layout='fill'
           objectFit='cover'
           src={image}
-          alt='/' />
+          alt={title} />
         <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2'>
           <h2 className='py-2'>{title}</h2>
           <h3>{techMore}</h3>
@@ -51,17 +82,88 @@ const Projects = ({project}) => {
             </div>
           </div>
         </div>
-        <Link href='/#projects'>
+
+        {/* Play-Store-style screenshot gallery */}
+        {hasGallery && (
+          <div className='col-span-5'>
+            <h2 className='text-slate-600 pb-4'>Screenshots</h2>
+            <div className='flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory'>
+              {gallery.map((src, index) => (
+                <button
+                  key={index}
+                  onClick={() => setLightbox(index)}
+                  className='snap-start shrink-0 rounded-xl overflow-hidden shadow-lg shadow-gray-400 bg-gray-100 hover:scale-[1.02] ease-in duration-200 cursor-pointer'
+                  aria-label={`View screenshot ${index + 1}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={`${title} screenshot ${index + 1}`}
+                    className='h-[360px] w-auto max-w-none object-contain'
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <Link href='/#projects' className='col-span-5'>
           <p className='underline uppercase text-lg font-semibold text-slate-600 cursor-pointer'>Back</p>
         </Link>
       </div>
+
+      {/* Lightbox overlay */}
+      {isOpen && (
+        <div
+          className='fixed inset-0 z-[200] bg-black/90 flex items-center justify-center p-4'
+          onClick={close}
+        >
+          <button
+            onClick={close}
+            className='absolute top-5 right-5 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 ease-in duration-200'
+            aria-label='Close'
+          >
+            <AiOutlineClose size={24} />
+          </button>
+
+          {hasGallery && (
+            <button
+              onClick={prev}
+              className='absolute left-3 md:left-6 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 ease-in duration-200'
+              aria-label='Previous'
+            >
+              <AiOutlineLeft size={28} />
+            </button>
+          )}
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={gallery[lightbox]}
+            alt={`${title} screenshot ${lightbox + 1}`}
+            className='max-h-[88vh] max-w-[92vw] object-contain rounded-lg'
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {hasGallery && (
+            <button
+              onClick={next}
+              className='absolute right-3 md:right-6 text-white p-3 rounded-full bg-white/10 hover:bg-white/20 ease-in duration-200'
+              aria-label='Next'
+            >
+              <AiOutlineRight size={28} />
+            </button>
+          )}
+
+          <div className='absolute bottom-5 left-1/2 -translate-x-1/2 text-white/80 text-sm'>
+            {lightbox + 1} / {gallery.length}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
 export const getStaticPaths = async () => {
-  const ids = getProjects().map(item => item.id)
-
   const paths = getProjects().map(item => ({
     params: {
       id: item.id
@@ -74,10 +176,8 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({params: {id}}) => {
+export const getStaticProps = async ({ params: { id } }) => {
   const project = getProjects().filter(item => item.id === id)
-  console.log('Project')
-  console.log(project)
 
   return {
     props: {

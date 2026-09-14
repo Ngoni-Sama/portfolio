@@ -20,7 +20,7 @@ const resume = () => {
           <h2 className='text-center'>Ngoni Maphosa</h2>
           <div className='flex'>
             <a
-              href='https://www.linkedin.com/in/ngoni-maphosa/'
+              href='https://www.linkedin.com/in/ngonidzashe-maphosa-737078138/'
               target='_blank'
               rel='noreferrer'
             >
@@ -151,7 +151,7 @@ const resume = () => {
             <li>Shipped a cloud-native retail POS on Cloudflare Workers/Pages with stubbed ZIMRA fiscalisation.</li>
             <li>Developed a multi-tenant school management portal (Next.js 16, Prisma 7, Auth.js v5, Neon Postgres) with role-based access control, and adapted it for on-prem MariaDB hosting for Warthog Academy.</li>
             <li>Built SwapSphere, a P2P intercity debt-swap mobile app (Expo/React Native + Node/Express + Prisma/Neon).</li>
-            <li>Created Tapseed, an AI job-matching monorepo (Cloudflare Worker + Next.js 16), and SamaritanLink, a digital-health MVP on Next.js/Vercel.</li>
+            <li>Created Job Assistant, an AI job-matching monorepo (Cloudflare Worker + Next.js 16) with swipe-to-match and a CV builder, and SamaritanLink, a digital-health MVP on Next.js/Vercel.</li>
           </ul>
         </div>
 
