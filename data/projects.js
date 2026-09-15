@@ -18,7 +18,7 @@ const getProjects = () => {
         link: '/projects/loc8',
         tech: 'Next.js',
         techMore: 'Next.js | Cloudflare',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://loc8.ma360-ngoni.workers.dev/',
         gitHubLink: '#', // TODO: add repo URL
         desc: 'A service marketplace for Zimbabwe that connects customers with local service providers. Built on Next.js 15 with a Cloudflare D1 (SQLite) database via Drizzle ORM, authentication through Auth.js, and Stripe for payments (Paynow integration planned).',
         techStack: [
@@ -33,7 +33,7 @@ const getProjects = () => {
         link: '/projects/pos-system',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Workers | Pages',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://pos-system-zimra.vercel.app/',
         gitHubLink: '#', // TODO: add repo URL
         desc: 'A cloud-native point-of-sale system for retailers built on Cloudflare Workers and Pages. It delivers a full sales vertical slice with a first-run register bootstrap and stubbed ZIMRA fiscalisation for Zimbabwe tax compliance.',
         techStack: [
@@ -48,7 +48,7 @@ const getProjects = () => {
         link: '/projects/school-portal',
         tech: 'Next.js',
         techMore: 'Next.js | Prisma',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://sms-lz204c1me-ngoni-samas-projects.vercel.app/',
         gitHubLink: '#', // TODO: add repo URL
         desc: 'A multi-tenant school management portal with role-based access control for administrators, teachers, students and guardians. Built with Next.js 16, Prisma 7 and Auth.js v5 on a Neon Postgres database. Covers dashboards, students, attendance, fees, library and leaderboards.',
         techStack: [
@@ -93,7 +93,7 @@ const getProjects = () => {
         link: '/projects/swapsphere',
         tech: 'React Native',
         techMore: 'Expo | Node.js',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://peer2peer-web.vercel.app',
         gitHubLink: 'https://github.com/Ngoni-Sama/Peer2Peer', // private repo
         desc: 'A peer-to-peer intercity debt-swap mobile app that lets users offset money transfers across cities without physically moving cash. Built with Expo / React Native and a Node/Express API backed by Prisma and Neon Postgres.',
         techStack: [
@@ -108,7 +108,7 @@ const getProjects = () => {
         link: '/projects/job-assistant',
         tech: 'AI / Next.js',
         techMore: 'Next.js | Cloudflare Worker',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://job-assistant-frontend-tau.vercel.app/',
         gitHubLink: 'https://github.com/Ngoni-Sama/job-assistant',
         desc: 'An AI-powered job-matching platform that pairs candidates with roles through a swipe-to-match flow, nearby jobs and a built-in CV builder. Structured as a monorepo combining a Cloudflare Worker API with a Next.js 16 front end.',
         techStack: [
@@ -153,11 +153,26 @@ const getProjects = () => {
         link: '/projects/caselaw-rag',
         tech: 'AI / RAG',
         techMore: 'Cloudflare AutoRAG',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://dash.paraat.ai/dashboard/chat?agent=21',
         gitHubLink: '#', // TODO: add repo URL
-        desc: 'A retrieval-augmented AI assistant over a Labour-law case corpus using Cloudflare AutoRAG vector search, returning answers with source-card citations.',
+        desc: 'A retrieval-augmented AI assistant over a Labour-law case corpus using Cloudflare AutoRAG vector search, returning answers with source-card citations. Runs as an agent on the Paraat AI dashboard.',
         techStack: [
             'Cloudflare AutoRAG', 'Vector Search', 'RAG', 'Workers'
+        ]
+    },
+    {
+        id: 'paraat',
+        title: 'Paraat AI Dashboard',
+        image: '/assets/projects/paraat/01.png',
+        images: gallery('paraat', ['png','png']),
+        link: '/projects/paraat',
+        tech: 'AI / RAG',
+        techMore: 'Cloudflare | RAG agents',
+        liveDemo: 'https://dash.paraat.ai',
+        gitHubLink: '#', // TODO: add repo URL
+        desc: 'A multi-agent AI dashboard that serves domain-specific retrieval-augmented assistants behind a single chat UI — including the Labour CaseLaw agent and a School Online G12 curriculum & past-papers agent — built on Cloudflare.',
+        techStack: [
+            'Cloudflare', 'RAG', 'Workers AI', 'Next.js'
         ]
     },
     {
@@ -213,7 +228,7 @@ const getProjects = () => {
         link: '/projects/canchem-jobs',
         tech: 'Node.js',
         techMore: 'Node.js',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://canchem.co.zw',
         gitHubLink: '#', // TODO: add repo URL
         desc: 'A careers portal for CanChem with an admin area for posting jobs and an email pipeline over Microsoft 365 SMTP. Node-based and hosted on Nivacity.',
         techStack: [

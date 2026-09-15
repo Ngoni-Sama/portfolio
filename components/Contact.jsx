@@ -38,6 +38,17 @@ const Contact = () => {
                     <a href='tel:+263773716074' className='hover:underline'>0773 716 074</a>
                   </p>
                   <p className='py-1'>
+                    <span className='font-semibold'>WhatsApp: </span>
+                    <a
+                      href='https://wa.me/263773716074'
+                      target='_blank'
+                      rel='noreferrer'
+                      className='text-green-600 hover:underline'
+                    >
+                      Message me on WhatsApp
+                    </a>
+                  </p>
+                  <p className='py-1'>
                     <span className='font-semibold'>Email: </span>
                     <a href='mailto:ngonidzashemaphosa@outlook.com' className='hover:underline'>
                       ngonidzashemaphosa@outlook.com
