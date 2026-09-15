@@ -78,7 +78,7 @@ const getProjects = () => {
         link: '/projects/warthog-site',
         tech: 'Web',
         techMore: 'HTML | CSS | JS',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://www.warthogacademy.co.zw',
         gitHubLink: 'https://github.com/Ngoni-Sama/warthogacademy',
         desc: 'A glassmorphism marketing website for Warthog Academy showcasing the school, its programmes and admissions. Static, fast and fully responsive.',
         techStack: [
@@ -138,7 +138,7 @@ const getProjects = () => {
         link: '/projects/talentcard',
         tech: 'Laravel',
         techMore: 'Laravel 12 | PHP',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://v1.talentcard.co.za',
         gitHubLink: '#', // TODO: add repo URL
         desc: 'An AI job-matching platform rebuilt greenfield on Laravel 12, featuring OAuth social login via Laravel Socialite and a test-driven codebase.',
         techStack: [
@@ -213,7 +213,7 @@ const getProjects = () => {
         link: '/projects/blog-publisher',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Worker | Ghost',
-        liveDemo: '#', // TODO: add live URL
+        liveDemo: 'https://dynamic-blog-worker.elula.workers.dev/admin', // login-gated admin
         gitHubLink: '#', // TODO: add repo URL
         desc: 'A Cloudflare Worker that automatically publishes content to seven Ghost blogs from a central configuration, with a glassmorphism admin dashboard and configuration stored in Cloudflare KV.',
         techStack: [
