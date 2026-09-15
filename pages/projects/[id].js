@@ -1,12 +1,13 @@
 import getProjects from '@/data/projects'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect, useCallback } from 'react'
 import { RiRadioButtonFill } from 'react-icons/ri'
 import { AiOutlineClose, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import EditableImage from '@/components/EditableImage'
+import { withBase } from '@/components/basePath'
 
 const Projects = ({ project }) => {
-  const { title, image, images, techMore, liveDemo, gitHubLink, desc, techStack } = project[0]
+  const { id, title, image, images, techMore, liveDemo, gitHubLink, desc, techStack } = project[0]
 
   // Gallery images: use the project's images array, falling back to the single hero image.
   const gallery = (images && images.length ? images : [image]).filter(Boolean)
@@ -26,6 +27,18 @@ const Projects = ({ project }) => {
     [gallery.length]
   )
 
+  // Resolve a gallery image, honoring any per-image override saved by the
+  // "edit images" feature so the lightbox matches the thumbnails.
+  const resolvedSrc = (i) => {
+    if (typeof window !== 'undefined') {
+      try {
+        const v = localStorage.getItem(`portfolio:img:gallery:${id}:${i}`)
+        if (v) return v
+      } catch (_) {}
+    }
+    return withBase(gallery[i])
+  }
+
   // Keyboard controls for the lightbox.
   useEffect(() => {
     if (!isOpen) return
@@ -41,13 +54,8 @@ const Projects = ({ project }) => {
   return (
     <div className='w-full'>
       <div className=' w-full h-[50vh] relative'>
-        <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
-        <Image
-          className='absolute z-1'
-          layout='fill'
-          objectFit='cover'
-          src={image}
-          alt={title} />
+        <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10 pointer-events-none' />
+        <EditableImage id={`hero:${id}`} src={image} alt={title} fill />
         <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2'>
           <h2 className='py-2'>{title}</h2>
           <h3>{techMore}</h3>
@@ -89,19 +97,15 @@ const Projects = ({ project }) => {
             <h2 className='text-slate-600 pb-4'>Screenshots</h2>
             <div className='flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory'>
               {gallery.map((src, index) => (
-                <button
+                <EditableImage
                   key={index}
+                  id={`gallery:${id}:${index}`}
+                  src={src}
+                  alt={`${title} screenshot ${index + 1}`}
                   onClick={() => setLightbox(index)}
                   className='snap-start shrink-0 rounded-xl overflow-hidden shadow-lg shadow-gray-400 bg-gray-100 hover:scale-[1.02] ease-in duration-200 cursor-pointer'
-                  aria-label={`View screenshot ${index + 1}`}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={src}
-                    alt={`${title} screenshot ${index + 1}`}
-                    className='h-[360px] w-auto max-w-none object-contain'
-                  />
-                </button>
+                  imgClassName='h-[360px] w-auto max-w-none object-contain block'
+                />
               ))}
             </div>
           </div>
@@ -138,7 +142,7 @@ const Projects = ({ project }) => {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={gallery[lightbox]}
+            src={resolvedSrc(lightbox)}
             alt={`${title} screenshot ${lightbox + 1}`}
             className='max-h-[88vh] max-w-[92vw] object-contain rounded-lg'
             onClick={(e) => e.stopPropagation()}
@@ -172,7 +176,7 @@ export const getStaticPaths = async () => {
 
   return {
       paths,
-      fallback: 'blocking'
+      fallback: false
   }
 }
 

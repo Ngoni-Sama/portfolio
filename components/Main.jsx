@@ -3,12 +3,22 @@ import React from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import EditableImage from './EditableImage';
 
 const Main = () => {
   return (
     <div id='home' className='w-full h-screen text-center'>
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
         <div>
+          <div className='flex justify-center pb-2'>
+            <EditableImage
+              id='profile'
+              src='/assets/about.jpg'
+              alt='Ngoni Maphosa'
+              className='w-[140px] h-[140px] rounded-full overflow-hidden shadow-lg shadow-gray-400'
+              imgClassName='w-full h-full object-cover'
+            />
+          </div>
           <p className='uppercase text-sm tracking-widest text-gray-600'>
             LET&#39;S BUILD SOMETHING TOGETHER
           </p>

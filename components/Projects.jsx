@@ -12,9 +12,10 @@ const Projects = () => {
         <Title title='Projects' sub="What I've Built" />
         <div className='grid md:grid-cols-2 gap-8'>
           {
-            data?.map(({title, image, link, tech}, index) => (
+            data?.map(({id, title, image, link, tech}, index) => (
               <ProjectItem
                 key={index}
+                id={id}
                 title={title}
                 backgroundImg={image}
                 projectUrl={link}

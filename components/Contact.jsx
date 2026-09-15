@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
-import ContactImg from '../public/assets/contact.jpg';
+import EditableImage from './EditableImage';
 import Title from './Title';
 
 const Contact = () => {
@@ -18,10 +17,12 @@ const Contact = () => {
           <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
             <div className='lg:p-4 h-full '>
               <div>
-                <Image
-                  className='rounded-xl hover:scale-105 ease-in duration-300'
-                  src={ContactImg}
-                  alt='/'
+                <EditableImage
+                  id='contact'
+                  src='/assets/contact.jpg'
+                  alt='Ngoni Maphosa'
+                  className='w-full'
+                  imgClassName='rounded-xl w-full h-auto object-cover hover:scale-105 ease-in duration-300'
                 />
               </div>
               <div>
