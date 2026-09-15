@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import React from 'react';
 import Title from './Title';
+import { withBase } from './basePath';
 
 const Technologies = () => {
   const data = [
@@ -99,7 +99,8 @@ const Technologies = () => {
               <div key={index} className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                   <div className='m-auto'>
-                    <Image className=' object-contain h-12 w-12 md:h-20 md:w-20' src={icon} width={400} height={400} alt='/' />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className=' object-contain h-12 w-12 md:h-20 md:w-20' src={withBase(icon)} alt={name} />
                   </div>
                   <div className='flex flex-col text-sm md:text-base items-center justify-center'>
                     <h3>{name}</h3>

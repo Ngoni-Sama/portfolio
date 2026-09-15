@@ -35,3 +35,28 @@ html {
     @apply shadow-xl shadow-gray-400 rounded-md uppercase bg-gradient-to-r from-purple-700 to-purple-600 text-white
   }
 }
+
+/* Print: produce a clean CV. Hide interactive chrome and flatten to black-on-white. */
+@media print {
+  .no-print { display: none !important; }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Make sure the resume uses the full printable width with tight margins. */
+  .resume-cv {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-cv h5 { break-after: avoid; }
+  .resume-cv .py-6 { break-inside: avoid; page-break-inside: avoid; }
+
+  @page { margin: 14mm; }
+
+  /* Preserve intended colors where used. */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
