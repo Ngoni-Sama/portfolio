@@ -110,30 +110,34 @@ const resume = () => {
         <h5 className='mt-8 text-slate-500 font-bold text-xl uppercase'>
           Professional Experience
         </h5>
-        {/* TODO: replace placeholder dates below with your real employment history. */}
         {/* Experience */}
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-            Full-Stack Engineer &mdash; AI &amp; Product Tooling
+            Elula Online
             </span>
-            <span className='px-2'>|</span>Remote
+            <span className='px-2'>|</span>South Africa (Remote)
           </p>
-          <p className='py-1 italic'>Software Engineer (TODO: dates)</p>
+          <p className='py-1 italic'>Senior Backend Developer &amp; Technical Coordinator (2024 &ndash; Present)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
-              Built AI-powered internal tooling including a Mattermost MCP chat integration,
-              a meeting-notes bot that auto-joins Teams/Meet calls and transcribes them with Vexa,
-              and a Labour-law RAG assistant on Cloudflare AutoRAG.
+              Architected and maintain a multi-tenant Laravel/PHP SaaS backend with company-level access
+              control, Auth0 SSO, PostgreSQL and subscription billing — serving multiple concurrent
+              enterprise clients from a single codebase.
             </li>
             <li>
-              Delivered client web platforms end to end — a CanChem careers portal (Node.js, M365 SMTP),
-              a multi-blog publisher on Cloudflare Workers/KV feeding seven Ghost sites, and a
-              greenfield Laravel 12 rebuild of the TalentCard job-matching platform.
+              Built an AI document search &amp; retrieval service on Cloudflare AutoRAG (vector search) and
+              Workers AI (Llama-3.1-8B) returning structured, source-cited summaries — productised as the
+              Labour CaseLaw agent on the Paraat AI dashboard.
             </li>
             <li>
-              Owned architecture, database design and deployments across Cloudflare, Vercel and
-              self-hosted (Nivacity) environments.
+              Engineered Model Context Protocol (MCP) agent backends (multi-turn persistence, structured
+              responses, PII-redacted logging, retry/backoff) and custom MCP servers deployed to Northflank
+              with CI/CD, plus a Cloudflare Email Routing pipeline and a meeting-notes transcription bot.
+            </li>
+            <li>
+              Led OWASP ZAP security remediation (SecurityHeaders middleware, secure cookies) to an A grade,
+              and coordinated a 7-person distributed team via ERPNext and Mattermost.
             </li>
           </ul>
         </div>
@@ -141,17 +145,98 @@ const resume = () => {
         <div className='py-6'>
           <p className='italic'>
             <span className='font-bold italic'>
-            Independent / Freelance Full-Stack Engineer
+            Lessly.io
             </span>
-            <span className='px-2'>|</span>Zimbabwe &amp; Remote
+            <span className='px-2'>|</span>Australia (Remote)
           </p>
-          <p className='py-1 italic'>Founder / Engineer (TODO: dates)</p>
+          <p className='py-1 italic'>Software Engineer &mdash; Independent Contractor (Oct 2024 &ndash; Jan 2025)</p>
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
-            <li>Built Loc8, a Zimbabwe service marketplace on Next.js 15 + Cloudflare D1/Drizzle with Auth.js and Stripe.</li>
-            <li>Shipped a cloud-native retail POS on Cloudflare Workers/Pages with stubbed ZIMRA fiscalisation.</li>
-            <li>Developed a multi-tenant school management portal (Next.js 16, Prisma 7, Auth.js v5, Neon Postgres) with role-based access control, and adapted it for on-prem MariaDB hosting for Warthog Academy.</li>
-            <li>Built SwapSphere, a P2P intercity debt-swap mobile app (Expo/React Native + Node/Express + Prisma/Neon).</li>
-            <li>Created Job Assistant, an AI job-matching monorepo (Cloudflare Worker + Next.js 16) with swipe-to-match and a CV builder, and SamaritanLink, a digital-health MVP on Next.js/Vercel.</li>
+            <li>
+              Built a full-stack event management platform — a FastAPI backend (RESTful CRUD, Supabase,
+              validation) with a React + TypeScript + Tailwind frontend using Redux Toolkit.
+            </li>
+            <li>
+              Used GPT-4 mini / GPT-3.5 to accelerate development from design ideas to working code, and
+              wrote unit tests across backend endpoints and frontend components.
+            </li>
+          </ul>
+        </div>
+
+        <div className='py-6'>
+          <p className='italic'>
+            <span className='font-bold italic'>
+            Pocket-Labs Technologies
+            </span>
+            <span className='px-2'>|</span>Bulawayo, ZW
+          </p>
+          <p className='py-1 italic'>Mobile &amp; AI Apps Developer &mdash; Independent Contractor (2023 &ndash; Present)</p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
+            <li>
+              Build AI-driven mobile apps with ML models and Firebase real-time/cloud services for
+              personalized, predictive experiences.
+            </li>
+            <li>
+              Shipped products including Loc8 (Cloudflare D1/Drizzle marketplace), a cloud-native retail POS
+              (ZIMRA-ready), a multi-tenant school portal (Next.js/Prisma/Neon, MariaDB build for Warthog
+              Academy), SwapSphere (Expo P2P fintech) and Job Assistant (AI job-matching).
+            </li>
+          </ul>
+        </div>
+
+        <div className='py-6'>
+          <p className='italic'>
+            <span className='font-bold italic'>
+            CanChem Hygiene Services
+            </span>
+            <span className='px-2'>|</span>Harare, ZW
+          </p>
+          <p className='py-1 italic'>IT Consultant (2022 &ndash; Present)</p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
+            <li>
+              Set up and configured the Sage Evolution accounting system (installation, GL/AR/AP/inventory
+              imports, SQL) with client training, go-live support and network setup.
+            </li>
+            <li>
+              Built the CanChem careers portal (Node.js, Microsoft 365 SMTP) with an admin area for posting jobs.
+            </li>
+          </ul>
+        </div>
+
+        <div className='py-6'>
+          <p className='italic'>
+            <span className='font-bold italic'>
+            ZimHope Investments
+            </span>
+            <span className='px-2'>|</span>Harare, ZW
+          </p>
+          <p className='py-1 italic'>Junior Developer, C++ &amp; JavaScript (Jan &ndash; Aug 2019)</p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
+            <li>
+              Developed C++ and JavaScript solutions with automated stock updates and predictive analytics.
+            </li>
+            <li>
+              Contributed to a system architecture redesign to improve application performance and scalability.
+            </li>
+          </ul>
+        </div>
+
+        {/* Education */}
+        <h5 className='mt-8 text-slate-500 font-bold text-xl uppercase'>
+          Education
+        </h5>
+        <div className='py-6'>
+          <p className='italic'>
+            <span className='font-bold italic'>
+            BSc (Hons) Computer Science
+            </span>
+            <span className='px-2'>|</span>National University of Science &amp; Technology (NUST)
+          </p>
+          <p className='py-1 italic'>2018 &ndash; 2022</p>
+          <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
+            <li>
+              Coursework: Data Structures, Algorithms, Computer Architecture, Operating Systems and
+              Software Engineering; strong proficiency in C, C++, Java and Python.
+            </li>
           </ul>
         </div>
 
