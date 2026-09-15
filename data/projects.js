@@ -193,8 +193,8 @@ const getProjects = () => {
     {
         id: 'blog-publisher',
         title: 'Multi-Blog Publisher',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/blog-publisher/01.png',
+        images: gallery('blog-publisher', ['png','png','png']),
         link: '/projects/blog-publisher',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Worker | Ghost',
