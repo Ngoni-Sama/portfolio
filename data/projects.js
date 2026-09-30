@@ -253,8 +253,8 @@ const getProjects = () => {
     {
         id: 'folio',
         title: 'Folio E-Book Reader',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/folio/01.png',
+        images: gallery('folio', ['png','png']),
         link: '/projects/folio',
         tech: 'React',
         techMore: 'React | Vite | Turborepo',
@@ -268,8 +268,8 @@ const getProjects = () => {
     {
         id: 'coconut-lounge',
         title: 'Coconut Lounge Menu',
-        image: PLACEHOLDER,
-        images: [PLACEHOLDER],
+        image: '/assets/projects/coconut-lounge/02.png',
+        images: gallery('coconut-lounge', ['png','png','png']),
         link: '/projects/coconut-lounge',
         tech: 'React Native',
         techMore: 'Expo | React Native',
