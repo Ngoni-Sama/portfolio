@@ -26,6 +26,21 @@ const getProjects = () => {
         ]
     },
     {
+        id: 'moleads',
+        title: 'MoLeads Marketplace',
+        image: '/assets/projects/moleads/01.png',
+        images: gallery('moleads', ['png','png','png']),
+        link: '/projects/moleads',
+        tech: 'Next.js',
+        techMore: 'Next.js | MySQL',
+        liveDemo: 'https://moleads.co.zw',
+        gitHubLink: '#', // TODO: add repo URL
+        desc: 'A pay-per-lead service marketplace connecting Zimbabwean customers with local professionals — post a job, browse pros on a live map, and spend tokens only to view or contact a lead. Next.js 15 (App Router) on a custom Node server with MariaDB/MySQL and Drizzle ORM, Auth.js v5 (PBKDF2 hashing), Leaflet / OpenStreetMap maps, and Pesepay hosted checkout for token packs with a verified settlement webhook. Live at moleads.co.zw.',
+        techStack: [
+            'Next.js 15', 'MariaDB / MySQL', 'Drizzle ORM', 'Auth.js v5', 'Leaflet', 'Pesepay'
+        ]
+    },
+    {
         id: 'pos-system',
         title: 'Retail POS System',
         image: '/assets/projects/pos-system/01.png',
