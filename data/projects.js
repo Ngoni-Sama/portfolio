@@ -140,9 +140,9 @@ const getProjects = () => {
         techMore: 'Laravel 12 | PHP',
         liveDemo: 'https://v1.talentcard.co.za',
         gitHubLink: '#', // TODO: add repo URL
-        desc: 'An AI job-matching platform rebuilt greenfield on Laravel 12, featuring OAuth social login via Laravel Socialite and a test-driven codebase.',
+        desc: 'An AI job-matching platform rebuilt greenfield on Laravel 12. Full v1 feature parity plus new capabilities across five milestones: applications, availability, notifications and messaging; company entities with employer vetting; monetization (subscription plans, quota, a reveal-credit ledger and multi-gateway payments — Stripe, PayPal, Razorpay, FlutterWave and offline, with 15% VAT); background checks with verified badges; and a full admin panel. Test-driven, with 162 passing tests.',
         techStack: [
-            'Laravel 12', 'PHP', 'MySQL', 'Socialite'
+            'Laravel 12', 'PHP', 'MySQL', 'Socialite', 'Stripe', 'PayPal'
         ]
     },
     {
@@ -248,6 +248,36 @@ const getProjects = () => {
         desc: 'A resumable Python tool that bulk-downloads Cambridge past exam papers from a flat store, built to handle large multi-subject runs without re-fetching completed work.',
         techStack: [
             'Python', 'Requests', 'CLI'
+        ]
+    },
+    {
+        id: 'folio',
+        title: 'Folio E-Book Reader',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
+        link: '/projects/folio',
+        tech: 'React',
+        techMore: 'React | Vite | Turborepo',
+        liveDemo: '#', // TODO: add live URL (Cloudflare Pages)
+        gitHubLink: '#', // TODO: add repo URL
+        desc: 'A DeepSeek-inspired, tile-based reader for public-domain books. A pnpm + Turborepo monorepo with a framework-agnostic core (Project Gutenberg / gutendex and Open Library adapters, parallel search with dedupe, CFI progress and Markdown-notes helpers) and a React 18 + Vite web app: a deduped tile-grid search, an EPUB reader with themes, font sizing, highlights and note export, plus Library and History — all persisted in IndexedDB.',
+        techStack: [
+            'React 18', 'Vite', 'Turborepo', 'Zustand', 'TanStack Query', 'epub.js', 'Cloudflare Pages'
+        ]
+    },
+    {
+        id: 'coconut-lounge',
+        title: 'Coconut Lounge Menu',
+        image: PLACEHOLDER,
+        images: [PLACEHOLDER],
+        link: '/projects/coconut-lounge',
+        tech: 'React Native',
+        techMore: 'Expo | React Native',
+        liveDemo: '#', // TODO: add live URL
+        gitHubLink: '#', // TODO: add repo URL
+        desc: 'An offline Android kiosk menu app for the Coconut Lounge restaurant, running on 40 tablets in device-owner kiosk mode. Built with Expo SDK 57 and a custom Reanimated 3D page-turn (finger-follow, spring-back and flick), a glassmorphism UI, a data-driven responsive menu that reflows between portrait and landscape, and offline code-book activation with lockout backoff.',
+        techStack: [
+            'Expo SDK 57', 'React Native', 'Reanimated 4', 'TypeScript', 'expo-secure-store'
         ]
     }
   ]
