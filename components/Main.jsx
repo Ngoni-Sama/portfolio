@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineMail, AiFillHeart } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import EditableImage from './EditableImage';
@@ -13,9 +13,9 @@ const Main = () => {
           <div className='flex justify-center pb-2'>
             <EditableImage
               id='profile'
-              src='/assets/about.jpg'
+              src='/assets/profile.png'
               alt='Ngoni Maphosa'
-              className='w-[140px] h-[140px] rounded-full overflow-hidden shadow-lg shadow-gray-400'
+              className='w-[160px] h-[160px] rounded-full overflow-hidden shadow-lg shadow-gray-400'
               imgClassName='w-full h-full object-cover'
             />
           </div>
@@ -30,7 +30,7 @@ const Main = () => {
             I build web, mobile and AI-powered products end to end — from
             Next.js front ends to Cloudflare and Node back ends.
           </p>
-          <div className='flex items-center justify-between max-w-[330px] m-auto py-4'>
+          <div className='flex items-center justify-between max-w-[430px] m-auto py-4'>
             <a
               href='https://www.linkedin.com/in/ngonidzashe-maphosa-737078138/'
               target='_blank'
@@ -38,6 +38,16 @@ const Main = () => {
             >
               <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
                 <FaLinkedinIn />
+              </div>
+            </a>
+            <a
+              href='https://support-ngonie.vercel.app/'
+              target='_blank'
+              rel='noreferrer'
+              title='Support my work'
+            >
+              <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 text-pink-600'>
+                <AiFillHeart />
               </div>
             </a>
             <a

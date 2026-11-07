@@ -117,17 +117,17 @@ const getProjects = () => {
     },
     {
         id: 'job-assistant',
-        title: 'Job Assistant',
+        title: 'VacancyPal',
         image: '/assets/projects/job-assistant/01.png',
-        images: gallery('job-assistant', ['png','png','png','png','png']),
+        images: gallery('job-assistant', ['png','png']),
         link: '/projects/job-assistant',
         tech: 'AI / Next.js',
         techMore: 'Next.js | Cloudflare Worker',
-        liveDemo: 'https://job-assistant-frontend-tau.vercel.app/',
-        gitHubLink: 'https://github.com/Ngoni-Sama/job-assistant',
-        desc: 'An AI-powered job-matching platform that pairs candidates with roles through a swipe-to-match flow, nearby jobs and a built-in CV builder. Structured as a monorepo combining a Cloudflare Worker API with a Next.js 16 front end.',
+        liveDemo: 'https://vacancypal.co.zw',
+        gitHubLink: '#', // private repo
+        desc: 'An AI-powered job-matching platform (formerly Job Assistant) that pairs candidates with roles through a swipe-to-match flow, nearby jobs, a built-in CV builder and AI Apply. A Cloudflare Worker API with a Next.js 16 front end. Live at vacancypal.co.zw and on the Google Play Store.',
         techStack: [
-            'Next.js 16', 'Cloudflare Workers', 'AI', 'TypeScript'
+            'Next.js 16', 'Cloudflare Workers', 'AI', 'TypeScript', 'Pesepay'
         ]
     },
     {
@@ -273,9 +273,9 @@ const getProjects = () => {
         link: '/projects/folio',
         tech: 'React',
         techMore: 'React | Vite | Turborepo',
-        liveDemo: '#', // TODO: add live URL (Cloudflare Pages)
+        liveDemo: 'https://folio-c4e.pages.dev',
         gitHubLink: '#', // TODO: add repo URL
-        desc: 'A DeepSeek-inspired, tile-based reader for public-domain books. A pnpm + Turborepo monorepo with a framework-agnostic core (Project Gutenberg / gutendex and Open Library adapters, parallel search with dedupe, CFI progress and Markdown-notes helpers) and a React 18 + Vite web app: a deduped tile-grid search, an EPUB reader with themes, font sizing, highlights and note export, plus Library and History — all persisted in IndexedDB.',
+        desc: 'A DeepSeek-inspired, tile-based reader for public-domain books. A pnpm + Turborepo monorepo with a framework-agnostic core (Project Gutenberg OPDS and Open Library adapters, parallel search with dedupe, CFI progress and Markdown-notes helpers) and a React 18 + Vite web app: a deduped tile-grid search, an EPUB reader with themes, font sizing, highlights and note export, plus Library and History — all persisted in IndexedDB. Live on Cloudflare Pages.',
         techStack: [
             'React 18', 'Vite', 'Turborepo', 'Zustand', 'TanStack Query', 'epub.js', 'Cloudflare Pages'
         ]
@@ -293,6 +293,21 @@ const getProjects = () => {
         desc: 'An offline Android kiosk menu app for the Coconut Lounge restaurant, running on 40 tablets in device-owner kiosk mode. Built with Expo SDK 57 and a custom Reanimated 3D page-turn (finger-follow, spring-back and flick), a glassmorphism UI, a data-driven responsive menu that reflows between portrait and landscape, and offline code-book activation with lockout backoff.',
         techStack: [
             'Expo SDK 57', 'React Native', 'Reanimated 4', 'TypeScript', 'expo-secure-store'
+        ]
+    },
+    {
+        id: 'hub263',
+        title: 'Hub263',
+        image: '/assets/projects/hub263/01.png',
+        images: gallery('hub263', ['png']),
+        link: '/projects/hub263',
+        tech: 'Cloudflare',
+        techMore: 'Cloudflare Worker | WebRTC',
+        liveDemo: 'https://hub263.ma360-ngoni.workers.dev',
+        gitHubLink: '#', // private repo
+        desc: 'A connector for Zimbabwe’s startup ecosystem — discover founders, investors, hubs and events, and connect directly. Built on a Cloudflare Worker with D1 and Durable Objects behind a React glassmorphism SPA, with in-app voice/video calling over WebRTC and Cloudflare TURN.',
+        techStack: [
+            'Cloudflare Workers', 'D1', 'Durable Objects', 'React', 'WebRTC', 'Cloudflare TURN'
         ]
     }
   ]
