@@ -2,34 +2,20 @@ import React from 'react'
 
 // Project screenshots live in public/assets/projects/<id>/ and were pulled from each
 // project's own repo (docs/screenshots, public, assets). Projects without real screenshots
-// yet fall back to placeholder.jpg — run/deploy them and drop images into their folder.
-const PLACEHOLDER = '/assets/projects/placeholder.jpg'
+// yet fall back to placeholder.webp — run/deploy them and drop images into their folder.
+// Images are stored as WebP (max 1600px) to keep the page light.
+const PLACEHOLDER = '/assets/projects/placeholder.webp'
 
-// Build a gallery of image paths for a project id, e.g. gallery('job-assistant', ['png','png']).
+// Build a gallery of image paths for a project id, e.g. gallery('job-assistant', ['webp','webp']).
 const gallery = (id, exts) => exts.map((ext, i) => `/assets/projects/${id}/${String(i + 1).padStart(2, '0')}.${ext}`)
 
 const getProjects = () => {
   return [
     {
-        id: 'loc8',
-        title: 'Loc8 Marketplace',
-        image: '/assets/projects/loc8/01.png',
-        images: gallery('loc8', ['png','png','png']),
-        link: '/projects/loc8',
-        tech: 'Next.js',
-        techMore: 'Next.js | Cloudflare',
-        liveDemo: 'https://loc8.ma360-ngoni.workers.dev/',
-        gitHubLink: '#', // TODO: add repo URL
-        desc: 'A service marketplace for Zimbabwe that connects customers with local service providers. Built on Next.js 15 with a Cloudflare D1 (SQLite) database via Drizzle ORM, authentication through Auth.js, and Stripe for payments (Paynow integration planned).',
-        techStack: [
-            'Next.js 15', 'Cloudflare D1', 'Drizzle ORM', 'Auth.js', 'Stripe', 'Tailwind CSS'
-        ]
-    },
-    {
         id: 'moleads',
         title: 'MoLeads Marketplace',
-        image: '/assets/projects/moleads/01.png',
-        images: gallery('moleads', ['png','png','png']),
+        image: '/assets/projects/moleads/01.webp',
+        images: gallery('moleads', ['webp','webp','webp']),
         link: '/projects/moleads',
         tech: 'Next.js',
         techMore: 'Next.js | MySQL',
@@ -43,8 +29,8 @@ const getProjects = () => {
     {
         id: 'pos-system',
         title: 'Retail POS System',
-        image: '/assets/projects/pos-system/01.png',
-        images: gallery('pos-system', ['png','png','png','png','png']),
+        image: '/assets/projects/pos-system/01.webp',
+        images: gallery('pos-system', ['webp','webp','webp','webp','webp']),
         link: '/projects/pos-system',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Workers | Pages',
@@ -58,8 +44,8 @@ const getProjects = () => {
     {
         id: 'school-portal',
         title: 'School Management Portal',
-        image: '/assets/projects/school-portal/01.png',
-        images: gallery('school-portal', ['png','png','png','png','png','png','png']),
+        image: '/assets/projects/school-portal/01.webp',
+        images: gallery('school-portal', ['webp','webp','webp','webp','webp','webp','webp']),
         link: '/projects/school-portal',
         tech: 'Next.js',
         techMore: 'Next.js | Prisma',
@@ -73,8 +59,8 @@ const getProjects = () => {
     {
         id: 'warthog-portal',
         title: 'Warthog Academy Portal',
-        image: '/assets/projects/warthog-portal/01.png',
-        images: gallery('warthog-portal', ['png','png','png','png','png']),
+        image: '/assets/projects/warthog-portal/01.webp',
+        images: gallery('warthog-portal', ['webp','webp','webp','webp','webp']),
         link: '/projects/warthog-portal',
         tech: 'Next.js',
         techMore: 'Next.js | MariaDB',
@@ -88,8 +74,8 @@ const getProjects = () => {
     {
         id: 'warthog-site',
         title: 'Warthog Academy Website',
-        image: '/assets/projects/warthog-site/01.jpg',
-        images: gallery('warthog-site', ['jpg','jpg','jpg','png','jpg','jpg']),
+        image: '/assets/projects/warthog-site/01.webp',
+        images: gallery('warthog-site', ['webp','webp','webp','webp','webp','webp']),
         link: '/projects/warthog-site',
         tech: 'Web',
         techMore: 'HTML | CSS | JS',
@@ -103,8 +89,8 @@ const getProjects = () => {
     {
         id: 'swapsphere',
         title: 'SwapSphere',
-        image: '/assets/projects/swapsphere/01.png',
-        images: gallery('swapsphere', ['png','png']),
+        image: '/assets/projects/swapsphere/01.webp',
+        images: gallery('swapsphere', ['webp','webp']),
         link: '/projects/swapsphere',
         tech: 'React Native',
         techMore: 'Expo | Node.js',
@@ -118,8 +104,8 @@ const getProjects = () => {
     {
         id: 'job-assistant',
         title: 'VacancyPal',
-        image: '/assets/projects/job-assistant/01.png',
-        images: gallery('job-assistant', ['png','png']),
+        image: '/assets/projects/job-assistant/01.webp',
+        images: gallery('job-assistant', ['webp','webp']),
         link: '/projects/job-assistant',
         tech: 'AI / Next.js',
         techMore: 'Next.js | Cloudflare Worker',
@@ -133,8 +119,8 @@ const getProjects = () => {
     {
         id: 'samaritanlink',
         title: 'SamaritanLink (MA360)',
-        image: '/assets/projects/samaritanlink/01.png',
-        images: gallery('samaritanlink', ['png','png','png']),
+        image: '/assets/projects/samaritanlink/01.webp',
+        images: gallery('samaritanlink', ['webp','webp','webp']),
         link: '/projects/samaritanlink',
         tech: 'Next.js',
         techMore: 'Next.js | Vercel',
@@ -148,8 +134,8 @@ const getProjects = () => {
     {
         id: 'talentcard',
         title: 'TalentCard',
-        image: '/assets/projects/talentcard/01.png',
-        images: gallery('talentcard', ['png','png','png','png']),
+        image: '/assets/projects/talentcard/01.webp',
+        images: gallery('talentcard', ['webp','webp','webp','webp']),
         link: '/projects/talentcard',
         tech: 'Laravel',
         techMore: 'Laravel 12 | PHP',
@@ -163,8 +149,8 @@ const getProjects = () => {
     {
         id: 'caselaw-rag',
         title: 'Labour Caselaw RAG',
-        image: '/assets/projects/caselaw-rag/01.png',
-        images: gallery('caselaw-rag', ['png','png','png']),
+        image: '/assets/projects/caselaw-rag/01.webp',
+        images: gallery('caselaw-rag', ['webp','webp','webp']),
         link: '/projects/caselaw-rag',
         tech: 'AI / RAG',
         techMore: 'Cloudflare AutoRAG',
@@ -178,8 +164,8 @@ const getProjects = () => {
     {
         id: 'paraat',
         title: 'Paraat AI Dashboard',
-        image: '/assets/projects/paraat/01.png',
-        images: gallery('paraat', ['png','png']),
+        image: '/assets/projects/paraat/01.webp',
+        images: gallery('paraat', ['webp','webp']),
         link: '/projects/paraat',
         tech: 'AI / RAG',
         techMore: 'Cloudflare | RAG agents',
@@ -193,8 +179,8 @@ const getProjects = () => {
     {
         id: 'meeting-notes-bot',
         title: 'Meeting Notes Bot',
-        image: '/assets/projects/meeting-notes-bot/01.png',
-        images: gallery('meeting-notes-bot', ['png','png']),
+        image: '/assets/projects/meeting-notes-bot/01.webp',
+        images: gallery('meeting-notes-bot', ['webp','webp']),
         link: '/projects/meeting-notes-bot',
         tech: 'AI',
         techMore: 'Vexa | Cloudflare Worker',
@@ -208,8 +194,8 @@ const getProjects = () => {
     {
         id: 'mattermost-mcp',
         title: 'Mattermost MCP Chat',
-        image: '/assets/projects/mattermost-mcp/01.png',
-        images: gallery('mattermost-mcp', ['png']),
+        image: '/assets/projects/mattermost-mcp/01.webp',
+        images: gallery('mattermost-mcp', ['webp']),
         link: '/projects/mattermost-mcp',
         tech: 'AI / MCP',
         techMore: 'MCP | Mattermost',
@@ -223,8 +209,8 @@ const getProjects = () => {
     {
         id: 'blog-publisher',
         title: 'Multi-Blog Publisher',
-        image: '/assets/projects/blog-publisher/01.png',
-        images: gallery('blog-publisher', ['png','png','png']),
+        image: '/assets/projects/blog-publisher/01.webp',
+        images: gallery('blog-publisher', ['webp','webp','webp']),
         link: '/projects/blog-publisher',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Worker | Ghost',
@@ -238,8 +224,8 @@ const getProjects = () => {
     {
         id: 'canchem-jobs',
         title: 'CanChem Jobs Portal',
-        image: '/assets/projects/canchem-jobs/01.png',
-        images: gallery('canchem-jobs', ['png','png']),
+        image: '/assets/projects/canchem-jobs/01.webp',
+        images: gallery('canchem-jobs', ['webp','webp']),
         link: '/projects/canchem-jobs',
         tech: 'Node.js',
         techMore: 'Node.js',
@@ -253,8 +239,8 @@ const getProjects = () => {
     {
         id: 'pastpapers',
         title: 'Past Papers Downloader',
-        image: '/assets/projects/pastpapers/01.png',
-        images: gallery('pastpapers', ['png']),
+        image: '/assets/projects/pastpapers/01.webp',
+        images: gallery('pastpapers', ['webp']),
         link: '/projects/pastpapers',
         tech: 'Python',
         techMore: 'Python',
@@ -268,8 +254,8 @@ const getProjects = () => {
     {
         id: 'folio',
         title: 'Folio E-Book Reader',
-        image: '/assets/projects/folio/01.png',
-        images: gallery('folio', ['png','png']),
+        image: '/assets/projects/folio/01.webp',
+        images: gallery('folio', ['webp','webp']),
         link: '/projects/folio',
         tech: 'React',
         techMore: 'React | Vite | Turborepo',
@@ -283,8 +269,8 @@ const getProjects = () => {
     {
         id: 'coconut-lounge',
         title: 'Coconut Lounge Menu',
-        image: '/assets/projects/coconut-lounge/02.png',
-        images: gallery('coconut-lounge', ['png','png','png']),
+        image: '/assets/projects/coconut-lounge/02.webp',
+        images: gallery('coconut-lounge', ['webp','webp','webp']),
         link: '/projects/coconut-lounge',
         tech: 'React Native',
         techMore: 'Expo | React Native',
@@ -298,8 +284,8 @@ const getProjects = () => {
     {
         id: 'hub263',
         title: 'Hub263',
-        image: '/assets/projects/hub263/01.png',
-        images: gallery('hub263', ['png']),
+        image: '/assets/projects/hub263/01.webp',
+        images: gallery('hub263', ['webp']),
         link: '/projects/hub263',
         tech: 'Cloudflare',
         techMore: 'Cloudflare Worker | WebRTC',
@@ -308,6 +294,51 @@ const getProjects = () => {
         desc: 'A connector for Zimbabwe’s startup ecosystem — discover founders, investors, hubs and events, and connect directly. Built on a Cloudflare Worker with D1 and Durable Objects behind a React glassmorphism SPA, with in-app voice/video calling over WebRTC and Cloudflare TURN.',
         techStack: [
             'Cloudflare Workers', 'D1', 'Durable Objects', 'React', 'WebRTC', 'Cloudflare TURN'
+        ]
+    },
+    {
+        id: 'claude-switch',
+        title: 'Claude Switch',
+        image: '/assets/projects/claude-switch/01.webp',
+        images: gallery('claude-switch', ['webp']),
+        link: '/projects/claude-switch',
+        tech: 'Desktop / C#',
+        techMore: 'Avalonia | .NET',
+        liveDemo: 'https://ngoni-sama.github.io/claude-switch/',
+        gitHubLink: 'https://github.com/Ngoni-Sama/claude-switch',
+        desc: 'A cross-platform desktop app for running separate work and personal Claude Desktop profiles side by side — switch accounts without losing history, transfer a conversation between profiles, and resume it where you left off. Built with Avalonia and .NET, with a Cloudflare Worker relay for linking computers.',
+        techStack: [
+            'Avalonia', '.NET', 'C#', 'Cloudflare Workers', 'MSIX'
+        ]
+    },
+    {
+        id: 'platform-qa',
+        title: 'Platform QA Kit',
+        image: '/assets/projects/platform-qa/01.webp',
+        images: gallery('platform-qa', ['webp']),
+        link: '/projects/platform-qa',
+        tech: 'Dev Tool',
+        techMore: 'Claude Skill | QA',
+        liveDemo: '#', // installable skill, no hosted demo
+        gitHubLink: 'https://github.com/Ngoni-Sama/platform-qa-kit',
+        desc: 'An open-source, installable QA agent that runs recorded end-to-end tests against a live web platform — read-only page checks, API and console error capture, AI-agent answer and memory tests, per-section screen recordings, and a polished HTML walkthrough report with suggested fixes. Ships as a Claude Code plugin marketplace entry and a drop-in skill bundle.',
+        techStack: [
+            'Claude Skills', 'Playwright-style automation', 'HTML reporting', 'Markdown'
+        ]
+    },
+    {
+        id: 'nivacity-console',
+        title: 'Nivacity Console',
+        image: '/assets/projects/nivacity-console/01.webp',
+        images: gallery('nivacity-console', ['webp']),
+        link: '/projects/nivacity-console',
+        tech: 'Node.js',
+        techMore: 'Node.js | Zero-dependency',
+        liveDemo: '#', // internal tool
+        gitHubLink: '#', // private
+        desc: 'A deploy dashboard and web terminal for a shared cPanel host with SSH closed off. It gives push-to-deploy, per-app deploy history and a browser terminal from a single zero-dependency Node server, with a signed-session login, Bearer-token access for scripts and brute-force lockout.',
+        techStack: [
+            'Node.js', 'Zero dependencies', 'cPanel / Passenger', 'Web terminal'
         ]
     }
   ]

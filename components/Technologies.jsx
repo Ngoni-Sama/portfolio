@@ -100,7 +100,7 @@ const Technologies = () => {
                 <div className='grid grid-cols-2 gap-4 justify-center items-center'>
                   <div className='m-auto'>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img className=' object-contain h-12 w-12 md:h-20 md:w-20' src={withBase(icon)} alt={name} />
+                    <img className=' object-contain h-12 w-12 md:h-20 md:w-20' src={withBase(icon)} alt={name} loading='lazy' decoding='async' />
                   </div>
                   <div className='flex flex-col text-sm md:text-base items-center justify-center'>
                     <h3>{name}</h3>

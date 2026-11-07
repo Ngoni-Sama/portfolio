@@ -13,8 +13,9 @@ const Main = () => {
           <div className='flex justify-center pb-2'>
             <EditableImage
               id='profile'
-              src='/assets/profile.png'
+              src='/assets/profile.webp'
               alt='Ngoni Maphosa'
+              eager
               className='w-[160px] h-[160px] rounded-full overflow-hidden shadow-lg shadow-gray-400'
               imgClassName='w-full h-full object-cover'
             />

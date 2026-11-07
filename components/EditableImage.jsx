@@ -36,8 +36,9 @@ function fileToCompressedDataURL(file, maxDim = 1400, quality = 0.82) {
  * @param src       default image path (relative to /public)
  * @param fill      absolutely fill the parent (for hero backgrounds)
  * @param onClick   called when NOT editing (e.g. open a lightbox)
+ * @param eager     load immediately instead of lazily (for above-the-fold images)
  */
-const EditableImage = ({ id, src, alt = '', className = '', imgClassName = '', fill = false, onClick }) => {
+const EditableImage = ({ id, src, alt = '', className = '', imgClassName = '', fill = false, onClick, eager = false }) => {
   const { editing } = useEdit()
   const [override, setOverride] = useState(null)
   const [busy, setBusy] = useState(false)
@@ -87,7 +88,13 @@ const EditableImage = ({ id, src, alt = '', className = '', imgClassName = '', f
       onClick={editing ? undefined : onClick}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={shown} alt={alt} className={imgCls} />
+      <img
+        src={shown}
+        alt={alt}
+        className={imgCls}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding='async'
+      />
 
       {editing && (
         <div className='absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 bg-black/45 rounded-[inherit]'>
